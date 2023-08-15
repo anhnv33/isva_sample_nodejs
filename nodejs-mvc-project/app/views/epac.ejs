@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<script type="text/javascript" src="/js/asn1tools.js"></script>
+<script type="text/javascript" src="/js/credparser.js"></script>
+<script type="text/javascript" src="/js/epac.js"></script>
+<title>Credential Viewer</title>
+</head>
+<body style="margin-left:16px; font-family:IBM Plex Sans, Helvetica Neue for IBM, Helvetica Neue;">
+  <h1 style="font-weight:300; font-size:28px">Credential Viewer</h1>
+
+  <div id="credsDiv" style="display:none">
+    <h2 style="font-weight: 400; font-size: 18px; margin-bottom: 10px">Username: <div id="usernameDiv" style="display:inline-block"></div></h2>
+    <table style="font-size: 14px; border:none; border-collapse:collapse">
+      <thead>
+        <tr style="height:40px">
+          <th style="width:8px; padding:0px; border:none"></th>
+          <th style="width: 180px; font-weight:normal; text-align:left; border:none">Attribute Name</th>
+          <th style="width: 180px; font-weight:normal; text-align:left; border:none">Attribute Value(s)</th>
+        </tr>
+      </thead>
+      <tbody id="credTableBody">
+      </tbody>
+    </table>
+  </div>
+
+  <div id="errorDiv" style="display:none"></div>
+
+<br /><br />
+<form method="post">
+    <!--  The default value here is an unauthenticated PAC included just for an example -->
+	<input type="hidden" name="epac" id="epac" value="<%= ivCreds %>" /> <br /><br /> 
+	<!-- <input type="button" id="displayEPACButton" value="Display EPAC"></input> -->
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Code to run when the DOM is ready
+        console.log("Document is ready!");
+        showEPAC();
+    });
+</script>
+
+</body>
+</html>
